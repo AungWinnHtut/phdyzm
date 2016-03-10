@@ -1,0 +1,57 @@
+<resources>
+
+    <string name="app_name">ExcellentService</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">ExcellentService</string>
+    <string name="title_activity_services_menu">ExcellentService</string>
+    <string name="title_activity_register">ExcellentService</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="services_prompt">Hotel</string>
+    <string name="rating_prompt">1</string>
+    <string name="cuisine_prompt">Chinese</string>
+    <string name="range_prompt">1 km</string>
+    <string name="welcome_text" >Welcome To Our ExcellentServices\n
+In our system customers can use the following 4 services.\n
+They are \n
+-Hotel\n
+-Bank\n
+-Restaurant\n
+-Hospital\n
+Customers can click the search buttom and use the available services.</string>
+
+    <string-array name="services_arrays">
+        <item>Hotel</item>
+        <item>Bank</item>
+        <item>Restaurant</item>
+        <item>Hospital</item>
+    </string-array>
+    <string-array name="ratings_arrays">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="cuisine_arrays">
+        <item>Chinese</item>
+        <item>Thai</item>
+        <item>Burmese</item>
+        <item>Japanese</item>
+    </string-array>
+    <string-array name="range_arrays">
+        <item>1 km</item>
+        <item>2 km</item>
+        <item>3 km</item>
+        <item>4 km</item>
+        <item>5 km</item>
+    </string-array>
+
+    <string name="title_activity_admin">AdminActivity</string>
+    <string name="title_activity_search_list">SearchListActivity</string>
+    <string name="title_activity_search2">Search2Activity</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="title_activity_gps">GPSActivity</string>
+
+</resources>

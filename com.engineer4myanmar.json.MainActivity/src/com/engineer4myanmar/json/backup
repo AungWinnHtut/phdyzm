@@ -1,0 +1,12 @@
+if (success == 1) {
+							JAresult = json.getJSONArray("result");
+
+							for (int i = 0; i < JAresult.length(); i++) {
+								JSONObject c = JAresult.getJSONObject(i);
+								// /////////////////////////////////////////////////////
+								String info_name = c.getString("info_name");
+								String address = c.getString("address");
+								String phone_no = c.getString("phone_no");
+								String space = "    ";
+								
+							}

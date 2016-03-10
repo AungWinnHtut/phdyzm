@@ -1,0 +1,464 @@
+
+inputs cat_name=Restaurant rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Restaurant.*,information.* FROM information inner join Restaurant on information.id= Restaurant.info_id WHERE information.rating like '%1%'  OR Restaurant.cuisine like '%Chinese%'  AND  1 BETWEEN Restaurant.price_high AND Restaurant.price_low AND   100 BETWEEN Restaurant.price_high AND Restaurant.price_low   GROUP BY information.name  
+
+ Roll  0 
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Restaurant rating=3 p1=10 cursine=Burmese 
+
+ sqlSELECT information.name AS info_name, Restaurant.*,information.* FROM information inner join Restaurant on information.id= Restaurant.info_id WHERE information.rating like '%3%'  OR Restaurant.cuisine like '%Burmese%'  AND  10 BETWEEN Restaurant.price_high AND Restaurant.price_low AND   100 BETWEEN Restaurant.price_high AND Restaurant.price_low   GROUP BY information.name  
+
+ Roll  1 
+
+ data exist 
+
+inputs cat_name=Unicorn restaurant rating=Mandalay Lashio Road p1=09796655847 
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Bank rating=5 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Bank.*,information.* FROM information inner join Bank on information.id= Bank.info_id WHERE information.rating like '%5%'  OR Bank.cuisine like '%Chinese%'  AND  1 BETWEEN Bank.price_high AND Bank.price_low AND   100 BETWEEN Bank.price_high AND Bank.price_low   GROUP BY information.name  
+
+inputs cat_name=Bank rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Bank.*,information.* FROM information inner join Bank on information.id= Bank.info_id WHERE information.rating like '%1%'  OR Bank.cuisine like '%Chinese%'  AND  1 BETWEEN Bank.price_high AND Bank.price_low AND   100 BETWEEN Bank.price_high AND Bank.price_low   GROUP BY information.name  
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Restaurant rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Restaurant.*,information.* FROM information inner join Restaurant on information.id= Restaurant.info_id WHERE information.rating like '%1%'  OR Restaurant.cuisine like '%Chinese%'  AND  1 BETWEEN Restaurant.price_high AND Restaurant.price_low AND   100 BETWEEN Restaurant.price_high AND Restaurant.price_low   GROUP BY information.name  
+
+ Roll  0 
+
+inputs cat_name=Restaurant rating=3 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Restaurant.*,information.* FROM information inner join Restaurant on information.id= Restaurant.info_id WHERE information.rating like '%3%'  OR Restaurant.cuisine like '%Chinese%'  AND  1 BETWEEN Restaurant.price_high AND Restaurant.price_low AND   100 BETWEEN Restaurant.price_high AND Restaurant.price_low   GROUP BY information.name  
+
+ Roll  1 
+
+ data exist 
+
+inputs cat_name=Unicorn restaurant rating=Mandalay Lashio Road p1=09796655847 
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Restaurant rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Restaurant.*,information.* FROM information inner join Restaurant on information.id= Restaurant.info_id WHERE information.rating like '%1%'  OR Restaurant.cuisine like '%Chinese%'  AND  1 BETWEEN Restaurant.price_high AND Restaurant.price_low AND   100 BETWEEN Restaurant.price_high AND Restaurant.price_low   GROUP BY information.name  
+
+ Roll  2 
+
+ data exist 
+
+inputs cat_name=Aung Padamya Chitee Restaurant rating=Circular Road p1=08534216 
+
+inputs cat_name=Fushion rating=Mandalay Lashio Road p1=08522651 
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Hotel rating=5 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%5%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  3 
+
+ data exist 
+
+inputs cat_name=Governor`s House rating=Mandalay Lashio Road p1=08522657 
+
+inputs cat_name=Hotel Pyin Oo Lwin rating=No.9 Nanda Road p1=08521226 
+
+inputs cat_name=Royal Reward Resort rating=Circular Road p1=08528711 
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Hotel rating=1 p1=1 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  1 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  5 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 
+
+inputs cat_name=Hotel rating=1 p1=10 cursine=Chinese 
+
+ sqlSELECT information.name AS info_name, Hotel.*,information.* FROM information inner join Hotel on information.id= Hotel.info_id WHERE information.rating like '%1%'  OR Hotel.cuisine like '%Chinese%'  AND  10 BETWEEN Hotel.price_high AND Hotel.price_low AND   100 BETWEEN Hotel.price_high AND Hotel.price_low   GROUP BY information.name  
+
+ Roll  6 
+
+ data exist 
+
+inputs cat_name=Hninn Si Khaing rating=Mandalay Lashio Road p1=08522854 
+
+inputs cat_name=Hotel Smile rating=Mandalay Lashio Road p1=08529467 
+
+inputs cat_name=ii rating=ii p1=ii 
+
+inputs cat_name=Monalisa rating=Mandalay Lashio Road p1=08521568 
+
+inputs cat_name=Royal Flower Guest House rating=Mandalay Lashio Road p1=08523199 
+
+inputs cat_name=San Pya rating=Mandalay Lashio Road p1=08522694 

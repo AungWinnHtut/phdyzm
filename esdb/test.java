@@ -1,0 +1,1 @@
+android:noHistory="true"
