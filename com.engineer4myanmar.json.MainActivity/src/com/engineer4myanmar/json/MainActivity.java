@@ -259,5 +259,11 @@ public class MainActivity extends Activity {
 		editor.putString(key, val);
 		editor.commit();
 	}
+	
+	public void funViewMap(View v)
+	{
+		Intent intent = new Intent(this,MapActivity.class);
+		startActivity(intent);
+	}
 
 }

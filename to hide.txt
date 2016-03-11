@@ -2,3 +2,5 @@ llRating
 llPrice
 llMaxMin
 llCuisine
+
+"SELECT information.name AS info_name, $catalog.*,information.* FROM information inner join $catalog on information.id= $catalog.info_id WHERE information.rating like '%$rating%'  OR $catalog.cuisine like '%$cui%'  AND  $p1 BETWEEN $catalog.price_high AND $catalog.price_low AND   $p2 BETWEEN $catalog.price_high AND $catalog.price_low   GROUP BY information.name "  ;

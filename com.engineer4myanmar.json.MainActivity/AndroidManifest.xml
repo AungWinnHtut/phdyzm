@@ -87,6 +87,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.engineer4myanmar.json.MainActivity" />
         </activity>
+        <activity
+            android:name=".MapActivity"
+            android:label="@string/title_activity_map" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.engineer4myanmar.json.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

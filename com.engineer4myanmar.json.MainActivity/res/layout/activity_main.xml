@@ -58,15 +58,18 @@
         android:layout_marginTop="36dp"
         android:onClick="funGPSon"
         android:text="GPS on" />
-    <!--
+
     <Button
         android:id="@+id/btnGetLoc"
        android:layout_width="250dp"
         android:layout_height="wrap_content"
        android:layout_gravity="center"       
         android:layout_marginTop="36dp"
-        android:onClick="funGetLoc"
+        android:onClick="funViewMap"
         android:background="#0099cc"
-        android:text="GPS on" />
- -->
+        android:text="Map" />
+
+
+
+
 </LinearLayout>

@@ -1,0 +1,38 @@
+
+Keystore type: JKS
+Keystore provider: SUN
+
+Your keystore contains 1 entry
+
+Alias name: aungwinhtut
+Creation date: Mar 11, 2016
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: CN=awh
+Issuer: CN=awh
+Serial number: 6f7ce557
+Valid from: Fri Mar 11 23:48:12 MMT 2016 until: Tue Mar 05 23:48:12 MMT 2041
+Certificate fingerprints:
+	 MD5:  CD:D9:EA:F1:F7:22:9E:D0:B8:85:10:65:D6:D4:8C:44
+	 SHA1: C7:28:48:D2:86:A8:B7:A1:7C:40:B7:C4:F6:13:FB:36:7F:8A:F5:6C
+	 SHA256: 67:A9:D4:04:26:07:CB:7E:12:B1:C2:94:28:29:47:C3:0A:B9:D5:D2:6D:78:CE:39:56:F7:34:EF:32:AB:89:C7
+	 Signature algorithm name: SHA256withRSA
+	 Version: 3
+
+Extensions: 
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 79 9D 70 2E FE 80 13 5D   16 AC 86 49 09 ED C7 A6  y.p....]...I....
+0010: 25 E0 9A 01                                        %...
+]
+]
+
+
+
+*******************************************
+*******************************************
+
+GoogleMap API key : AIzaSyC_g6k8JYZGDnZXoXOOAExoP9Be6FmxfJc

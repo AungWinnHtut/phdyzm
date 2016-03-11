@@ -12,7 +12,7 @@
     <string name="rating_prompt">1</string>
     <string name="cuisine_prompt">Chinese</string>
     <string name="range_prompt">1 km</string>
-    <string name="welcome_text" >Welcome To Our ExcellentServices\n
+    <string name="welcome_text">Welcome To Our ExcellentServices\n
 In our system customers can use the following 4 services.\n
 They are \n
 -Hotel\n
@@ -53,5 +53,6 @@ Customers can click the search buttom and use the available services.</string>
     <string name="title_activity_search2">Search2Activity</string>
     <string name="title_activity_detail">DetailActivity</string>
     <string name="title_activity_gps">GPSActivity</string>
+    <string name="title_activity_map">MapActivity</string>
 
 </resources>

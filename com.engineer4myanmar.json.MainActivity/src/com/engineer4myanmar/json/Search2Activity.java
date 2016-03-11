@@ -14,33 +14,29 @@ import org.apache.http.NameValuePair;
 import org.apache.http.StatusLine;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.os.AsyncTask;
-import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.EditText;
-import android.widget.ListAdapter;
-import android.widget.SimpleAdapter;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.utils.URLEncodedUtils;
-import org.apache.http.entity.StringEntity;
-
-public class Search2Activity extends Activity {
+public class Search2Activity extends Activity implements OnItemSelectedListener {
 	public static String ipaddress1 = "192.168.1.100";
 
 	Person person = null;
@@ -50,6 +46,10 @@ public class Search2Activity extends Activity {
 	EditText etMin;
 	EditText etMax;
 	Spinner spCuisine;
+	LinearLayout llRating;
+	LinearLayout llPrice;
+	LinearLayout llMaxMin;
+	LinearLayout llCuisine;
 
 	String input_services = "";
 	String input_range = "";
@@ -118,13 +118,17 @@ public class Search2Activity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_search2);
-
+		llRating = (LinearLayout)findViewById(R.id.llRating );
+		llPrice = (LinearLayout)findViewById(R.id.llPrice );
+		llMaxMin = (LinearLayout)findViewById(R.id.llMaxMin);
+		llCuisine = (LinearLayout)findViewById(R.id.llCuisine);
 		spServices = (Spinner) findViewById(R.id.spServices);
 		spRange = (Spinner) findViewById(R.id.spRange);
 		spRating = (Spinner) findViewById(R.id.spRating);
 		etMin = (EditText) findViewById(R.id.etMin);
 		etMax = (EditText) findViewById(R.id.etMax);
 		spCuisine = (Spinner) findViewById(R.id.spCuisine);
+		spServices.setOnItemSelectedListener(this);
 	}
 
 	private class HttpAsyncTaskSearch extends AsyncTask<String, String, String>{
@@ -257,6 +261,49 @@ public class Search2Activity extends Activity {
 		startActivity(intent);
 	}
 
-	
+	public void onItemSelected(AdapterView<?> parent, View view, int pos,
+			long id) {
+		// TODO Auto-generated method stub
+		switch(pos)
+		{
+		case 0:
+			showViews();
+			//Toast.makeText(getApplicationContext(), "zero",Toast.LENGTH_SHORT).show();
+			break;
+		case 1:
+			hideViews();
+			//Toast.makeText(getApplicationContext(), "one",Toast.LENGTH_SHORT).show();
+			break;
+		case 2:
+			showViews();
+			//Toast.makeText(getApplicationContext(), "two",Toast.LENGTH_SHORT).show();			
+			break;
+		case 3:
+			hideViews();
+			//Toast.makeText(getApplicationContext(), "three",Toast.LENGTH_SHORT).show();
+			break;
+		}
+		
+	}
+
+	public void onNothingSelected(AdapterView<?> arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void hideViews()
+	{
+		llRating.setVisibility(4);
+		llPrice.setVisibility(4);
+		llMaxMin.setVisibility(4);
+		llCuisine.setVisibility(4);
+	}
+	public void showViews()
+	{
+		llRating.setVisibility(0);
+		llPrice.setVisibility(0);
+		llMaxMin.setVisibility(0);
+		llCuisine.setVisibility(0);
+	}
 
 }
