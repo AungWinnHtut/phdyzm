@@ -54,5 +54,6 @@ Customers can click the search buttom and use the available services.</string>
     <string name="title_activity_detail">DetailActivity</string>
     <string name="title_activity_gps">GPSActivity</string>
     <string name="title_activity_map">MapActivity</string>
+    <string name="title_activity_gmap">GMapActivity</string>
 
 </resources>

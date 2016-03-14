@@ -150,6 +150,9 @@ public class Search2Activity extends Activity implements OnItemSelectedListener 
 			params1.add(new BasicNameValuePair("p1", input_min));
 			params1.add(new BasicNameValuePair("p2", input_max));
 			params1.add(new BasicNameValuePair("cuisine", input_cuisine));
+			
+			// TO DO * need to add range, cur_lat and cur_lng
+			
 			if (!resultList.isEmpty()) {
 				resultList.clear();
 			}
