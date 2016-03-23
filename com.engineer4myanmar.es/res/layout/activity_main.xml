@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:orientation="vertical"
+    android:background="#fff">
+
+    
+     
+    
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"     
+        android:layout_marginTop="80dp"
+        android:textColor="#ffbb33"
+        android:hint="Enter Username Here"
+        android:text="aung"
+        android:ems="10" >
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"       
+        android:layout_marginTop="36dp"
+        android:textColor="#ffbb33"
+        android:hint="Enter Password Here"
+        android:inputType="textPassword"
+        android:text="12345"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_gravity="center"       
+        android:onClick="funLogin"
+         android:text="Login" />
+
+    <Button
+        android:id="@+id/btnRegister"
+       android:layout_width="250dp"
+        android:layout_height="wrap_content"
+       android:layout_gravity="center"       
+        android:layout_marginTop="36dp"
+        android:onClick="funRegister"
+        android:text="Register" />
+    <Button
+        android:id="@+id/btnGPS"
+       android:layout_width="250dp"
+        android:layout_height="wrap_content"
+       android:layout_gravity="center"       
+        android:layout_marginTop="36dp"
+        android:onClick="funGPSon"
+        android:text="GPS on" />
+
+    <Button
+        android:id="@+id/btnGetLoc"
+       android:layout_width="250dp"
+        android:layout_height="wrap_content"
+       android:layout_gravity="center"       
+        android:layout_marginTop="36dp"
+        android:onClick="funViewMap"
+        android:background="#0099cc"
+        android:text="Map" />
+
+
+
+
+</LinearLayout>
