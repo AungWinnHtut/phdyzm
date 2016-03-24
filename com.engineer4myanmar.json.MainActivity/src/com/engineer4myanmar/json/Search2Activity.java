@@ -24,7 +24,9 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -70,6 +72,108 @@ public class Search2Activity extends Activity implements OnItemSelectedListener 
 	final ArrayList<String> Alist = new ArrayList<String>();
 	ArrayList<HashMap<String, String>> resultList = new ArrayList<HashMap<String, String>>();
 	String finalResult="";
+
+
+	// /////////////////////////////////////////////////////////////////////
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_search2);
+		llRating = (LinearLayout)findViewById(R.id.llRating );
+		llPrice = (LinearLayout)findViewById(R.id.llPrice );
+		llMaxMin = (LinearLayout)findViewById(R.id.llMaxMin);
+		llCuisine = (LinearLayout)findViewById(R.id.llCuisine);
+		spServices = (Spinner) findViewById(R.id.spServices);
+		spRange = (Spinner) findViewById(R.id.spRange);
+		spRating = (Spinner) findViewById(R.id.spRating);
+		etMin = (EditText) findViewById(R.id.etMin);
+		etMax = (EditText) findViewById(R.id.etMax);
+		spCuisine = (Spinner) findViewById(R.id.spCuisine);
+		spServices.setOnItemSelectedListener(this);
+	}
+
+
+	public void funSearchNow(View v) {
+		HashMap<String,String> hashMap = new HashMap<String,String>();
+		// new registerJSONdbTask().execute(url_register);
+		input_services = String.valueOf(spServices.getSelectedItem());
+		// Toast.makeText(getApplicationContext(), input_services,
+		// Toast.LENGTH_SHORT).toString();
+		// TO DO hospital and bank data omit
+		input_range = String.valueOf(spRange.getSelectedItem());
+		input_rating = String.valueOf(spRating.getSelectedItem());
+		input_cuisine = String.valueOf(spCuisine.getSelectedItem());
+		input_min = etMin.getText().toString();
+		input_max = etMax.getText().toString();
+		//Bundle with hashMap
+		hashMap.put("name",input_services);
+		hashMap.put("range",input_range);
+		hashMap.put("rating",input_rating);
+		hashMap.put("cuisine",input_cuisine);
+		hashMap.put("min",input_min);
+		hashMap.put("max",input_max);
+		/////////////////////////////////////////
+		SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);		
+		String lat = sharedPref.getString("lat", "22.024104");
+		String lng = sharedPref.getString("lng","96.447339");
+		hashMap.put("x0",lat);
+		hashMap.put("y0",lng);
+		hashMap.put("r",input_range);
+		
+		
+		Toast.makeText(getApplicationContext(), hashMap.get("range"),
+				Toast.LENGTH_SHORT).show();
+		Intent intent = new Intent(getApplicationContext(),
+				SearchListActivity.class);			
+		intent.putExtra("hashMap",hashMap);		
+		startActivity(intent);
+	}
+
+	public void onItemSelected(AdapterView<?> parent, View view, int pos,
+			long id) {
+		// TODO Auto-generated method stub
+		switch(pos)
+		{
+		case 0:
+			showViews();
+			//Toast.makeText(getApplicationContext(), "zero",Toast.LENGTH_SHORT).show();
+			break;
+		case 1:
+			hideViews();
+			//Toast.makeText(getApplicationContext(), "one",Toast.LENGTH_SHORT).show();
+			break;
+		case 2:
+			showViews();
+			//Toast.makeText(getApplicationContext(), "two",Toast.LENGTH_SHORT).show();			
+			break;
+		case 3:
+			hideViews();
+			//Toast.makeText(getApplicationContext(), "three",Toast.LENGTH_SHORT).show();
+			break;
+		}
+		
+	}
+
+	public void onNothingSelected(AdapterView<?> arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void hideViews()
+	{
+		llRating.setVisibility(4);
+		llPrice.setVisibility(4);
+		llMaxMin.setVisibility(4);
+		llCuisine.setVisibility(4);
+	}
+	public void showViews()
+	{
+		llRating.setVisibility(0);
+		llPrice.setVisibility(0);
+		llMaxMin.setVisibility(0);
+		llCuisine.setVisibility(0);
+	}
+	
 	// ////////////////////////////////////////////////////////////////////
 	@SuppressWarnings("null")
 	public String readJSONFeed(String URL, List<NameValuePair> params) {
@@ -112,25 +216,9 @@ public class Search2Activity extends Activity implements OnItemSelectedListener 
 		return stringBuilder.toString();
 
 	}
-
-	// /////////////////////////////////////////////////////////////////////
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_search2);
-		llRating = (LinearLayout)findViewById(R.id.llRating );
-		llPrice = (LinearLayout)findViewById(R.id.llPrice );
-		llMaxMin = (LinearLayout)findViewById(R.id.llMaxMin);
-		llCuisine = (LinearLayout)findViewById(R.id.llCuisine);
-		spServices = (Spinner) findViewById(R.id.spServices);
-		spRange = (Spinner) findViewById(R.id.spRange);
-		spRating = (Spinner) findViewById(R.id.spRating);
-		etMin = (EditText) findViewById(R.id.etMin);
-		etMax = (EditText) findViewById(R.id.etMax);
-		spCuisine = (Spinner) findViewById(R.id.spCuisine);
-		spServices.setOnItemSelectedListener(this);
-	}
-
+	
+	
+/*
 	private class HttpAsyncTaskSearch extends AsyncTask<String, String, String>{
 		public AsyncResponse delegate=null;
 		JSONObject json = null;
@@ -150,7 +238,9 @@ public class Search2Activity extends Activity implements OnItemSelectedListener 
 			params1.add(new BasicNameValuePair("p1", input_min));
 			params1.add(new BasicNameValuePair("p2", input_max));
 			params1.add(new BasicNameValuePair("cuisine", input_cuisine));
-			
+			//params1.add(new BasicNameValuePair("x0","22.44"));
+			//params1.add(new BasicNameValuePair("y0","96.44"));
+			//params1.add(new BasicNameValuePair("r", "3"));
 			// TO DO * need to add range, cur_lat and cur_lng
 			
 			if (!resultList.isEmpty()) {
@@ -158,12 +248,14 @@ public class Search2Activity extends Activity implements OnItemSelectedListener 
 			}
 			return readJSONFeed(urls[0], params1);
 		}
+		*/
 
 		/**
 		 * After completing background task Dismiss the progress dialog
 		 * @return 
 		 * @return 
 		 * **/
+	/*
 		protected  void onPostExecute(String result) {
 			
 			if(!finalResult.isEmpty())
@@ -238,75 +330,6 @@ public class Search2Activity extends Activity implements OnItemSelectedListener 
 		inputStream.close();
 		return result;
 	}
-
-	public void funSearchNow(View v) {
-		HashMap<String,String> hashMap = new HashMap<String,String>();
-		// new registerJSONdbTask().execute(url_register);
-		input_services = String.valueOf(spServices.getSelectedItem());
-		// Toast.makeText(getApplicationContext(), input_services,
-		// Toast.LENGTH_SHORT).toString();
-		input_range = String.valueOf(spRange.getSelectedItem());
-		input_rating = String.valueOf(spRating.getSelectedItem());
-		input_cuisine = String.valueOf(spCuisine.getSelectedItem());
-		input_min = etMin.getText().toString();
-		input_max = etMax.getText().toString();
-		hashMap.put("name",input_services);
-		hashMap.put("range",input_range);
-		hashMap.put("rating",input_rating);
-		hashMap.put("cuisine",input_cuisine);
-		hashMap.put("min",input_min);
-		hashMap.put("max",input_max);
-		Toast.makeText(getApplicationContext(), hashMap.get("name"),
-				Toast.LENGTH_SHORT).toString();
-		Intent intent = new Intent(getApplicationContext(),
-				SearchListActivity.class);			
-		intent.putExtra("hashMap",hashMap);		
-		startActivity(intent);
-	}
-
-	public void onItemSelected(AdapterView<?> parent, View view, int pos,
-			long id) {
-		// TODO Auto-generated method stub
-		switch(pos)
-		{
-		case 0:
-			showViews();
-			//Toast.makeText(getApplicationContext(), "zero",Toast.LENGTH_SHORT).show();
-			break;
-		case 1:
-			hideViews();
-			//Toast.makeText(getApplicationContext(), "one",Toast.LENGTH_SHORT).show();
-			break;
-		case 2:
-			showViews();
-			//Toast.makeText(getApplicationContext(), "two",Toast.LENGTH_SHORT).show();			
-			break;
-		case 3:
-			hideViews();
-			//Toast.makeText(getApplicationContext(), "three",Toast.LENGTH_SHORT).show();
-			break;
-		}
-		
-	}
-
-	public void onNothingSelected(AdapterView<?> arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void hideViews()
-	{
-		llRating.setVisibility(4);
-		llPrice.setVisibility(4);
-		llMaxMin.setVisibility(4);
-		llCuisine.setVisibility(4);
-	}
-	public void showViews()
-	{
-		llRating.setVisibility(0);
-		llPrice.setVisibility(0);
-		llMaxMin.setVisibility(0);
-		llCuisine.setVisibility(0);
-	}
+	*/
 
 }

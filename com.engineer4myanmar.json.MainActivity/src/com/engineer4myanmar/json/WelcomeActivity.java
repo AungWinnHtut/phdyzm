@@ -18,7 +18,7 @@ public class WelcomeActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_welcome);
-		wv = (WebView) findViewById(R.id.webView1);
+		
 
 	}
 

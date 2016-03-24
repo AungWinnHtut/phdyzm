@@ -40,7 +40,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="#669900" 
-            android:text="Range" />
+            android:text="Range(km)" />
 
         <Spinner
             android:id="@+id/spRange"

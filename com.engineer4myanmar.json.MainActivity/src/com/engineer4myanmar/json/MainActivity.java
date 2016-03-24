@@ -48,8 +48,69 @@ public class MainActivity extends Activity {
 	public static String ipaddress = "192.168.1.100";
 
 	@SuppressWarnings("null")
-	public String readJSONFeed(String URL) {
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		System.out.print("JSON UI");
+		// AppLocationManager appLocationManager = new AppLocationManager(
+		// MainActivity.this);
+		// String lat = appLocationManager.getLatitude();
+		// String lng = appLocationManager.getLongitude();
+		// Toast.makeText(getApplicationContext(),
+		// "Your current Location is " + lat + " , " + lng,
+		// Toast.LENGTH_LONG).show();
 
+		GPS();
+
+		// ("http://extjs.org.cn/extjs/examples/grid/survey.html");
+		// //192.168.1.100/test/get_all_data.php
+		// Toast.makeText(getApplicationContext(),"UI",Toast.LENGTH_LONG).show();
+	}
+
+	public void onStart() {
+		super.onResume();
+		etUsername = (EditText) findViewById(R.id.etUsername);
+		etPassword = (EditText) findViewById(R.id.etPassword);
+		etUsername.setText("");
+		etPassword.setText("");
+	}
+
+	public void funLogin(View v) {
+		String iUname = etUsername.getText().toString();
+		String iPass = etPassword.getText().toString();
+		if (iUname.equals("admin") && iPass.equals("admin")) {
+			funAdmin();
+		} else {
+			new ReadJSONFeedTask().execute("http://" + ipaddress
+					+ "/esdb/get_all_data.php");
+		}
+
+	}
+	
+
+	public void funRegister(View v) {
+		Intent intent = new Intent(getApplicationContext(),
+				RegisterActivity.class);
+		// intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		startActivity(intent);
+	}
+
+	public void funAdmin() {
+		Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
+		// intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		startActivity(intent);
+	}
+
+	public void funGPSon(View v) {
+		GPS();
+	}
+	public void GPS()
+	{
+		Intent intent = new Intent(getApplicationContext(), GPSActivity.class);
+		startActivity(intent);
+	}
+	public String readJSONFeed(String URL) {
 		StringBuilder stringBuilder = new StringBuilder();
 		HttpClient client = new DefaultHttpClient();
 		HttpGet httpGet = new HttpGet(URL);
@@ -176,94 +237,24 @@ public class MainActivity extends Activity {
 
 	}
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		System.out.print("JSON UI");
-		//AppLocationManager appLocationManager = new AppLocationManager(
-		//		MainActivity.this);
-		//String lat = appLocationManager.getLatitude();
-		//String lng = appLocationManager.getLongitude();
-		//Toast.makeText(getApplicationContext(),
-		//		"Your current Location is " + lat + " , " + lng,
-		//		Toast.LENGTH_LONG).show();
-		
-		
-		// funGPSon();
-
-		// ("http://extjs.org.cn/extjs/examples/grid/survey.html");
-		// //192.168.1.100/test/get_all_data.php
-		// Toast.makeText(getApplicationContext(),"UI",Toast.LENGTH_LONG).show();
-	}
-
-	public void onStart() {
-		super.onResume();
-		etUsername = (EditText) findViewById(R.id.etUsername);
-		etPassword = (EditText) findViewById(R.id.etPassword);
-		etUsername.setText("");
-		etPassword.setText("");
-	}
-
-	public void funLogin(View v) {
-		String iUname = etUsername.getText().toString();
-		String iPass = etPassword.getText().toString();
-		if (iUname.equals("admin") && iPass.equals("admin")) {
-			funAdmin();
-		} else {
-			new ReadJSONFeedTask().execute("http://" + ipaddress
-					+ "/esdb/get_all_data.php");
-		}
-
-	}
-
-	public void funRegister(View v) {
-		Intent intent = new Intent(getApplicationContext(),
-				RegisterActivity.class);
-		// intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-		startActivity(intent);
-	}
-
-	public void funAdmin() {
-		Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
-		// intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-		startActivity(intent);
-	}
-
-	public void funGPSon(View v) {
-		Intent intent = new Intent(getApplicationContext(), GPSActivity.class);
-		startActivity(intent);
-	}
-
-	public void funGetLoc(View v) {
-		String lat;
-		String lng;
-		lat = getLocation("lat");
-		lng = getLocation("lng");
-		Toast.makeText(getApplicationContext(),
-				"Your current Location is " + lat + " , " + lng,
-				Toast.LENGTH_LONG).show();
-	}
-
-	public String getLocation(String key) {
-		SharedPreferences sharedPref = this.getSharedPreferences(
-				"com.engineer4myanmar.json", Context.MODE_PRIVATE);
-		String val = sharedPref.getString(key, "00.000000");
-		return val;
-	}
-
-	public void setLocation(String key, String val) {
-		SharedPreferences sharedPref = this.getSharedPreferences(
-				"com.engineer4myanmar.json", Context.MODE_PRIVATE);
-		SharedPreferences.Editor editor = sharedPref.edit();
-		editor.putString(key, val);
-		editor.commit();
-	}
-	
-	public void funViewMap(View v)
-	{
-		Intent intent = new Intent(this,MapActivity.class);
-		startActivity(intent);
-	}
-
+	// TO DO .. remove
+	/*
+	 * public void funGetLoc(View v) { String lat; String lng; lat =
+	 * getLocation("lat", "22.024104"); lng = getLocation("lng", "96.447339");
+	 * Toast.makeText(getApplicationContext(), "Your current Location is " + lat
+	 * + " , " + lng, Toast.LENGTH_LONG).show(); }
+	 * 
+	 * public String getLocation(String key, String default_value) {
+	 * SharedPreferences sharedPref = this.getSharedPreferences(
+	 * "com.engineer4myanmar.json", Context.MODE_PRIVATE); String val =
+	 * sharedPref.getString(key, default_value); return val; }
+	 * 
+	 * public void setLocation(String key, String val) { SharedPreferences
+	 * sharedPref = this.getSharedPreferences( "com.engineer4myanmar.json",
+	 * Context.MODE_PRIVATE); SharedPreferences.Editor editor =
+	 * sharedPref.edit(); editor.putString(key, val); editor.commit(); }
+	 * 
+	 * public void funViewMap(View v) { Intent intent = new Intent(this,
+	 * MapActivity.class); startActivity(intent); } // /// TO DO till here
+	 */
 }

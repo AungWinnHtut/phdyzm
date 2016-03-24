@@ -1,5 +1,5 @@
 package com.engineer4myanmar.json;
-
+//Just for Reserve (Map)
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;

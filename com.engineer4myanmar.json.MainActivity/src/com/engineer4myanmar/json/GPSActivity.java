@@ -72,7 +72,6 @@ public class GPSActivity extends Activity implements LocationListener {
 	public void onProviderEnabled(String provider) {
 		Toast.makeText(this, "Enabled new provider " + provider,
 				Toast.LENGTH_SHORT).show();
-
 	}
 
 	public void onProviderDisabled(String provider) {
@@ -162,8 +161,8 @@ public class GPSActivity extends Activity implements LocationListener {
 	public HashMap<String,String> getLocation(){
 		HashMap map = new HashMap<String,String>();
 		SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);		
-		String lat = sharedPref.getString("lat", "00.000000");
-		String lng = sharedPref.getString("lng","00.000000");
+		String lat = sharedPref.getString("lat", "22.024104");
+		String lng = sharedPref.getString("lng","96.447339");
 		map.put("lat",lat);
 		map.put("lng",lng);
 		return map;

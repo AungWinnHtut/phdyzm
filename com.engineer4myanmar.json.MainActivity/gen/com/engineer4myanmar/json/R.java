@@ -27,12 +27,10 @@ public final class R {
         public static final int TextView02=0x7f090019;
         public static final int TextView03=0x7f09001b;
         public static final int TextView04=0x7f09001c;
-        public static final int address=0x7f09003b;
-        public static final int b1=0x7f090024;
+        public static final int address=0x7f090039;
+        public static final int b1=0x7f090023;
         public static final int btnGPS=0x7f090021;
-        public static final int btnGetLoc=0x7f090022;
         public static final int btnLogin=0x7f09001f;
-        public static final int btnMap=0x7f090038;
         public static final int btnRegister=0x7f090020;
         public static final int btnSearch=0x7f090031;
         public static final int etAddress=0x7f090006;
@@ -55,7 +53,7 @@ public final class R {
         public static final int etServiceName=0x7f090016;
         public static final int etUrl=0x7f09000a;
         public static final int etUsername=0x7f09001d;
-        public static final int info_name=0x7f09003a;
+        public static final int info_name=0x7f090038;
         public static final int linearLayout1=0x7f090017;
         public static final int linearLayout2=0x7f09001a;
         public static final int llCuisine=0x7f090035;
@@ -63,10 +61,10 @@ public final class R {
         public static final int llPrice=0x7f090033;
         public static final int llRating=0x7f090032;
         public static final int lvList=0x7f090037;
-        public static final int menu_settings=0x7f09003d;
-        public static final int phone_no=0x7f09003c;
+        public static final int menu_settings=0x7f09003b;
+        public static final int phone_no=0x7f09003a;
         public static final int scrollView1=0x7f090001;
-        public static final int seekBar1=0x7f090023;
+        public static final int seekBar1=0x7f090022;
         public static final int spCatalog=0x7f090002;
         public static final int spCuisine=0x7f090030;
         public static final int spRange=0x7f09002c;
@@ -83,8 +81,8 @@ public final class R {
         public static final int textView8=0x7f090012;
         public static final int textView9=0x7f090014;
         public static final int txtTest=0x7f090036;
-        public static final int webView1=0x7f090039;
-        public static final int webView2=0x7f090025;
+        public static final int webView1=0x7f090025;
+        public static final int webView2=0x7f090024;
     }
     public static final class layout {
         public static final int activity_admin=0x7f030000;
@@ -93,13 +91,14 @@ public final class R {
         public static final int activity_gps=0x7f030003;
         public static final int activity_main=0x7f030004;
         public static final int activity_map=0x7f030005;
-        public static final int activity_register=0x7f030006;
-        public static final int activity_search=0x7f030007;
-        public static final int activity_search2=0x7f030008;
-        public static final int activity_search_list=0x7f030009;
-        public static final int activity_services_menu=0x7f03000a;
-        public static final int activity_welcome=0x7f03000b;
-        public static final int list_item=0x7f03000c;
+        public static final int activity_map2=0x7f030006;
+        public static final int activity_register=0x7f030007;
+        public static final int activity_search=0x7f030008;
+        public static final int activity_search2=0x7f030009;
+        public static final int activity_search_list=0x7f03000a;
+        public static final int activity_services_menu=0x7f03000b;
+        public static final int activity_welcome=0x7f03000c;
+        public static final int list_item=0x7f03000d;
     }
     public static final class menu {
         public static final int activity_admin=0x7f080000;
@@ -108,12 +107,13 @@ public final class R {
         public static final int activity_gps=0x7f080003;
         public static final int activity_main=0x7f080004;
         public static final int activity_map=0x7f080005;
-        public static final int activity_register=0x7f080006;
-        public static final int activity_search=0x7f080007;
-        public static final int activity_search2=0x7f080008;
-        public static final int activity_search_list=0x7f080009;
-        public static final int activity_services_menu=0x7f08000a;
-        public static final int activity_welcome=0x7f08000b;
+        public static final int activity_map2=0x7f080006;
+        public static final int activity_register=0x7f080007;
+        public static final int activity_search=0x7f080008;
+        public static final int activity_search2=0x7f080009;
+        public static final int activity_search_list=0x7f08000a;
+        public static final int activity_services_menu=0x7f08000b;
+        public static final int activity_welcome=0x7f08000c;
     }
     public static final class raw {
         public static final int es=0x7f040000;
@@ -133,6 +133,7 @@ public final class R {
         public static final int title_activity_gps=0x7f050011;
         public static final int title_activity_main=0x7f050003;
         public static final int title_activity_map=0x7f050012;
+        public static final int title_activity_map2=0x7f050014;
         public static final int title_activity_register=0x7f050005;
         public static final int title_activity_search=0x7f050007;
         public static final int title_activity_search2=0x7f05000f;

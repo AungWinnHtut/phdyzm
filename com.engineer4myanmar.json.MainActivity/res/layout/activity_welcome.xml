@@ -33,16 +33,6 @@
         android:onClick="funCallSearch"
         android:text="Search" />
 
-    <Button
-        android:id="@+id/btnMap"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="funMap"
-        android:text="Map" />
-
-    <WebView
-        android:id="@+id/webView1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+  
 
 </LinearLayout>

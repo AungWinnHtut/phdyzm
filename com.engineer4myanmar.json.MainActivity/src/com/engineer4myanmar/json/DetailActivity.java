@@ -87,6 +87,9 @@ public class DetailActivity extends Activity {
 	// change here your ip/folder/php
 	private static String url_search = "http://" + ipaddress1
 			+ "/esdb/detail_hotel.php";
+	private static String url_map = "http://" + ipaddress1
+			+ "/esdb/map2.php?";
+	
 	ListView lv;
 	private ProgressDialog pDialog;
 	final ArrayList<String> Alist = new ArrayList<String>();
@@ -298,9 +301,18 @@ private class HttpAsyncTaskSearch extends AsyncTask<String, String, String>{
 		new HttpAsyncTaskSearch().execute(url_search);
 		
 	}
-	public void unMapView(View v)
+	public void funMapView(View v)
 	{
-		
+		HashMap<String,String> hashMap = new HashMap<String,String>();
+		hashMap.put("name",name);
+		hashMap.put("address",address);
+		hashMap.put("lat",lat);
+		hashMap.put("lng",lng);
+		Toast.makeText(getApplicationContext(), name+address+lat+lng,Toast.LENGTH_SHORT).show();
+		Intent intent = new Intent(getApplicationContext(),
+				Map2Activity.class);			
+		intent.putExtra("DetailHashMap",hashMap);		
+		startActivity(intent);
 	}
    
 

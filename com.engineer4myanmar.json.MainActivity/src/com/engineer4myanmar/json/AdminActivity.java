@@ -257,15 +257,15 @@ public class AdminActivity extends Activity {
 	{
 		String lat;
 		String lng;
-		lat=getLocation("lat");
-		lng=getLocation("lng");
+		lat=getLocation("lat","22.024104");
+		lng=getLocation("lng","96.447339");
 		Toast.makeText(getApplicationContext(),"Your current Location is "+lat+" , " +lng, Toast.LENGTH_LONG).show();
 		etLat.setText(lat);
 		etLng.setText(lng);
 	}
-	public String getLocation(String key){
+	public String getLocation(String key, String default_value){
 		SharedPreferences sharedPref = this.getSharedPreferences("com.engineer4myanmar.json",Context.MODE_PRIVATE);	
-		String val = sharedPref.getString(key, "00.000000");
+		String val = sharedPref.getString(key, default_value);
 		return val;
 	}
 	public void setLocation(String key,String val)

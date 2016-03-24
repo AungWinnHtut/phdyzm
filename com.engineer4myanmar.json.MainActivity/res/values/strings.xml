@@ -11,7 +11,7 @@
     <string name="services_prompt">Hotel</string>
     <string name="rating_prompt">1</string>
     <string name="cuisine_prompt">Chinese</string>
-    <string name="range_prompt">1 km</string>
+    <string name="range_prompt">1</string>
     <string name="welcome_text">Welcome To Our ExcellentServices\n
 In our system customers can use the following 4 services.\n
 They are \n
@@ -41,11 +41,11 @@ Customers can click the search buttom and use the available services.</string>
         <item>Japanese</item>
     </string-array>
     <string-array name="range_arrays">
-        <item>1 km</item>
-        <item>2 km</item>
-        <item>3 km</item>
-        <item>4 km</item>
-        <item>5 km</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
     </string-array>
 
     <string name="title_activity_admin">AdminActivity</string>
@@ -55,5 +55,6 @@ Customers can click the search buttom and use the available services.</string>
     <string name="title_activity_gps">GPSActivity</string>
     <string name="title_activity_map">MapActivity</string>
     <string name="title_activity_gmap">GMapActivity</string>
+    <string name="title_activity_map2">Map2Activity</string>
 
 </resources>
