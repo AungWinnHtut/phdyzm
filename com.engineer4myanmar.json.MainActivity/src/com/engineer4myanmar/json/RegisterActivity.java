@@ -53,7 +53,7 @@ public class RegisterActivity extends Activity {
 	JSONParser jsonParser = new JSONParser();
 
 	// change here your ip/folder/php
-	private static String url_register = "http://192.168.1.100/esdb/register_user.php";
+	private static String url_register = "http://mmgreenhackers.com/esdb/register_user.php";
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

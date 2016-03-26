@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back"
     android:orientation="vertical" >
 
     <LinearLayout
@@ -16,8 +17,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dip"
-            android:layout_marginRight="5dip"
+            android:layout_marginRight="5dip"            
             android:text="Latitude: "
+            android:textColor="#F5F516"
             android:textSize="20dip" >
         </TextView>
 
@@ -25,6 +27,7 @@
             android:id="@+id/TextView02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#fff"
             android:text="unknown"
             android:textSize="20dip" >
         </TextView>
@@ -41,6 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dip"
             android:layout_marginRight="5dip"
+            android:textColor="#F5F516"
             android:text="Longitute: "
             android:textSize="20dip" >
         </TextView>
@@ -49,6 +53,7 @@
             android:id="@+id/TextView04"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#fff"
             android:text="unknown"
             android:textSize="20dip" >
         </TextView>

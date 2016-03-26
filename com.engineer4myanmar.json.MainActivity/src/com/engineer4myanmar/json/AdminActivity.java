@@ -65,12 +65,16 @@ public class AdminActivity extends Activity {
 	JSONParser jsonParser = new JSONParser();
 
 	// change here your ip/folder/php
-	private static String url_add="http://192.168.1.100/esdb/add_hotel.php";
-	private static String url_add_hospital = "http://192.168.1.100/esdb/add_hospital.php";
-	private static String url_add_hotel = "http://192.168.1.100/esdb/add_hotel.php";
-	private static String url_add_bank= "http://192.168.1.100/esdb/add_bank.php";
-	private static String url_add_restaurant= "http://192.168.1.100/esdb/add_restaurant.php";
-	
+	//private static String url_add="http://mmgreenhacker.com/esdb/add_hotel.php";
+	//private static String url_add_hospital = "http://mmgreenhacker.com/esdb/add_hospital.php";
+	//private static String url_add_hotel = "http://mmgreenhacker.com/esdb/add_hotel.php";
+	//private static String url_add_bank= "http://mmgreenhacker.com/esdb/add_bank.php";
+	//private static String url_add_restaurant= "http://mmgreenhacker.com/esdb/add_restaurant.php";
+	private static String url_add="http://mmgreenhackers.com/esdb/add_hotel.php";
+	private static String url_add_hospital = "http://mmgreenhackers.com/esdb/add_hospital.php";
+	private static String url_add_hotel = "http://mmgreenhackers.com/esdb/add_hotel.php";
+	private static String url_add_bank= "http://mmgreenhackers.com/esdb/add_bank.php";
+	private static String url_add_restaurant= "http://mmgreenhackers.com/esdb/add_restaurant.php";
 	
 	
 	

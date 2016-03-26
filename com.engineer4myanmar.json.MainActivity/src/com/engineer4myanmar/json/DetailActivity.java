@@ -43,7 +43,7 @@ import android.widget.Toast;
 import android.support.v4.app.NavUtils;
 
 public class DetailActivity extends Activity {
-	public static String ipaddress1 = "192.168.1.100";
+	public static String ipaddress1 = "mmgreenhackers.com";//"192.168.1.100";
 
 	Person person = null;
 	EditText etName;

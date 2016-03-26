@@ -41,7 +41,7 @@ import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.entity.StringEntity;
 
 public class SearchActivity extends Activity {
-	public static String ipaddress1 = "192.168.1.100";
+	public static String ipaddress1 =  "mmgreenhackers.com";//"192.168.1.100";
 
 	Person person = null;
 	Spinner spServices;

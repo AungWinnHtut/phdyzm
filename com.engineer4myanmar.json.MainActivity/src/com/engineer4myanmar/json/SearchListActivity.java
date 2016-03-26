@@ -45,7 +45,7 @@ import android.widget.Toast;
 import android.support.v4.app.NavUtils;
 
 public class SearchListActivity extends Activity {
-	public static String ipaddress1 = "192.168.1.100";
+	public static String ipaddress1 =  "mmgreenhackers.com";//"192.168.1.100";
 
 	Person person = null;
 	Spinner spServices;
@@ -100,6 +100,7 @@ public class SearchListActivity extends Activity {
 		y0=hMap.get("y0");
 		r=hMap.get("r");
 		Toast.makeText(getApplicationContext(), x0+y0+r, Toast.LENGTH_SHORT).show();
+		Toast.makeText(getApplicationContext(), url_search, Toast.LENGTH_SHORT).show();
 		// Log.d("test fun", "fun running");
 		// Toast.makeText(getApplicationContext(), input_services,
 		// Toast.LENGTH_SHORT).show();
@@ -164,12 +165,14 @@ public class SearchListActivity extends Activity {
 		 * @return
 		 * **/
 		protected void onPostExecute(String result) {
-
+			Toast.makeText(getApplicationContext(),result, Toast.LENGTH_LONG).show();
+			Log.e("!!!!!! ERRor",result);
 			JSONArray resultJsonArray = null;
 			try {
 				JSONObject json = new JSONObject(result);
 				int success = json.getInt("success");
 				if (success == 1) {
+					Toast.makeText(getApplicationContext(),"SUCCESS JSON", Toast.LENGTH_SHORT).show();
 					resultJsonArray = json.getJSONArray("result");
 					Toast.makeText(getApplicationContext(), "JSON success", Toast.LENGTH_SHORT).show();
 					for (int i = 0; i < resultJsonArray.length(); i++) {

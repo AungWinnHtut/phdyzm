@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
 	int login_status = 0;
 	String inputUsername = "";
 	String inputPassword = "";
-	public static String ipaddress = "192.168.1.100";
+	public static String ipaddress =  "mmgreenhackers.com";// "192.168.1.100";
 
 	@SuppressWarnings("null")
 	@Override
@@ -163,7 +163,7 @@ public class MainActivity extends Activity {
 			// ipaddress = etIpaddress.getText().toString();
 			inputUsername = etUsername.getText().toString();
 			inputPassword = etPassword.getText().toString();
-
+			Toast.makeText(getApplicationContext(), inputUsername, Toast.LENGTH_SHORT).show();
 			user_status = 0;
 			password_status = 0;
 			login_status = 0;

@@ -22,10 +22,10 @@ They are \n
 Customers can click the search buttom and use the available services.</string>
 
     <string-array name="services_arrays">
-        <item>Hotel</item>
-        <item>Bank</item>
-        <item>Restaurant</item>
-        <item>Hospital</item>
+        <item>hotel</item>
+        <item>bank</item>
+        <item>restaurant</item>
+        <item>hospital</item>
     </string-array>
     <string-array name="ratings_arrays">
         <item>1</item>
