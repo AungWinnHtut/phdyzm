@@ -2,20 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical" >
-
-    <!-- Product id (pid) - will be HIDDEN - used to pass to other activity -->
+    android:orientation="vertical" 
+    android:padding="10dp">   
     <TextView
         android:id="@+id/info_name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingTop="6dip"
         android:paddingLeft="6dip"
-        android:textSize="17dip"
-        android:textColor="#000"
+        android:textSize="22dip"
+        android:textColor="#ffbb33"
         android:textStyle="bold" />
-
-    <!-- Name Label -->
     <TextView
         android:id="@+id/address"
         android:layout_width="fill_parent"
@@ -23,11 +20,9 @@
         android:paddingTop="6dip"
         android:paddingLeft="6dip"
         android:textSize="17dip"
-        android:textColor="#000"
-        android:textStyle="bold" />
+        android:textColor="#fff"
+        android:textStyle="bold" />  
 
-    
-    <!-- Name Label -->
     <TextView
         android:id="@+id/phone_no"
         android:layout_width="fill_parent"
@@ -35,6 +30,6 @@
         android:paddingTop="6dip"
         android:paddingLeft="6dip"
         android:textSize="17dip"
-        android:textColor="#000"
+        android:textColor="#fff"
         android:textStyle="bold" />
 </LinearLayout>

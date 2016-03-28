@@ -90,7 +90,8 @@ public class DetailActivity extends Activity {
 	private static String url_map = "http://" + ipaddress1
 			+ "/esdb/map2.php?";
 	
-	ListView lv;
+	//ListView lv;
+	
 	private ProgressDialog pDialog;
 	final ArrayList<String> Alist = new ArrayList<String>();
 	ArrayList<HashMap<String, String>> resultList = new ArrayList<HashMap<String, String>>();
@@ -138,7 +139,7 @@ public class DetailActivity extends Activity {
 		return stringBuilder.toString();
 
 	}
-
+///////////////////////////////////////////////////////////
 	HashMap<String,String> hMap = new HashMap<String,String>();	
 	
 	
@@ -308,7 +309,7 @@ private class HttpAsyncTaskSearch extends AsyncTask<String, String, String>{
 		hashMap.put("address",address);
 		hashMap.put("lat",lat);
 		hashMap.put("lng",lng);
-		Toast.makeText(getApplicationContext(), name+address+lat+lng,Toast.LENGTH_SHORT).show();
+		//Toast.makeText(getApplicationContext(), name+address+lat+lng,Toast.LENGTH_SHORT).show();
 		Intent intent = new Intent(getApplicationContext(),
 				Map2Activity.class);			
 		intent.putExtra("DetailHashMap",hashMap);		

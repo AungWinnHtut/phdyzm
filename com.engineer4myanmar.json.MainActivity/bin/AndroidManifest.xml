@@ -108,6 +108,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.engineer4myanmar.json.DetailActivity" />
         </activity>
+        <activity
+            android:name=".SearchList2Activity"
+            android:label="@string/title_activity_search_list2" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.engineer4myanmar.json.Search2Activity" />
+        </activity>
     </application>
 
 </manifest>

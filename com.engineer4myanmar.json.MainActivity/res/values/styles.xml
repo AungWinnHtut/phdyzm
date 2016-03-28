@@ -1,5 +1,15 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+    </style>
 
-    <style name="AppTheme" parent="android:Theme.Light" />
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:spinnerDropDownItemStyle">@style/mySpinnerItemStyle</item>
+    </style>
 
+    <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textColor">@color/my_spinner_text_color</item>
+        <item name="android:spinnerItemStyle">@style/mySpinnerItemStyle</item>
+    </style>
+    
+    
 </resources>

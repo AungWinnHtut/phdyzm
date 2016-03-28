@@ -164,7 +164,7 @@ public class RegisterActivity extends Activity {
 			try{
 				if(result.equals(null))
 				{
-					Toast.makeText(getBaseContext(), "'"+ result+"'",Toast.LENGTH_LONG).show();
+					//Toast.makeText(getBaseContext(), "'"+ result+"'",Toast.LENGTH_LONG).show();
 				}
 				else
 				{

@@ -44,7 +44,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v4.app.NavUtils;
 
-public class SearchListActivity extends Activity {
+public class SearchList2Activity extends Activity {
 	public static String ipaddress1 =  "mmgreenhackers.com";//"192.168.1.100";
 
 	Person person = null;
@@ -89,25 +89,22 @@ public class SearchListActivity extends Activity {
 		Intent intent = getIntent();
 		hMap = (HashMap<String, String>) intent.getSerializableExtra("hashMap");
 
-		setContentView(R.layout.activity_search_list);
-		lv = (ListView) findViewById(R.id.lvList);
+		setContentView(R.layout.activity_search_list2);
+		lv = (ListView) findViewById(R.id.lvList2);
 		// new registerJSONdbTask().execute(url_register);
 		input_services = hMap.get("name");
-	
+		
 		if(input_services.equals("hotel"))
 		{
-		
-			url_search = "http://" + ipaddress1	+ "/esdb/search3.php";
+			url_search = "http://" + ipaddress1	+ "/esdb/search32.php";
 		}
 		else if(input_services.equals("restaurant"))
 		{
-		
-			url_search = "http://" + ipaddress1	+ "/esdb/search3.php";
+			url_search = "http://" + ipaddress1	+ "/esdb/search32.php";
 		}
 		else
 		{
-			
-			url_search = "http://" + ipaddress1	+ "/esdb/search_bank_hospital.php";
+			url_search = "http://" + ipaddress1	+ "/esdb/search_bank_hospital2.php";
 		}
 		input_range = hMap.get("range");
 		input_rating = hMap.get("rating");
@@ -117,8 +114,8 @@ public class SearchListActivity extends Activity {
 		x0=hMap.get("x0");
 		y0=hMap.get("y0");
 		r=hMap.get("r");
-	
 		
+	
 
 		new HttpAsyncTaskSearch().execute(url_search);
 
@@ -130,7 +127,7 @@ public class SearchListActivity extends Activity {
 				// getting values from selected ListItem
 				String infoname = ((TextView) view.findViewById(R.id.info_name))
 						.getText().toString();
-				
+			
 				Intent intent = new Intent(getApplicationContext(),
 						DetailActivity.class);
 				intent.putExtra("infoname", infoname);
@@ -169,28 +166,27 @@ public class SearchListActivity extends Activity {
 		 * @return
 		 * **/
 		protected void onPostExecute(String result) {
-			
+		
 			Log.e("!!!!!! ERRor",result);
 			JSONArray resultJsonArray = null;
 			try {
 				JSONObject json = new JSONObject(result);
-				int success = json.getInt("success");
+				int success = json.getInt("success");				
 				String execution_time = json.getString("execution_time");
-				Toast.makeText(getApplicationContext(),  "execution time by DBA: "+execution_time,Toast.LENGTH_LONG).show();
+				Toast.makeText(getApplicationContext(), "execution time by PDA: "+execution_time,Toast.LENGTH_LONG).show();
 				if (success == 1) {
-					
+					//Toast.makeText(getApplicationContext(),"SUCCESS JSON", Toast.LENGTH_SHORT).show();
 					resultJsonArray = json.getJSONArray("result");
-					
+					//Toast.makeText(getApplicationContext(), "JSON success", Toast.LENGTH_SHORT).show();
 					for (int i = 0; i < resultJsonArray.length(); i++) {
 						JSONObject c = resultJsonArray.getJSONObject(i);
 						String info_name = c.getString("info_name");
 						String address = c.getString("address");
-						String phone_no = c.getString("phone_no");
-						
+						String phone_no = c.getString("phone_no");						
 						// creating new HashMap
 						HashMap<String, String> map = new HashMap<String, String>();
 						// adding each child node to HashMap key => value
-
+						
 						map.put("info_name", info_name);
 						map.put("address", address);
 						map.put("phone_no", phone_no);
@@ -223,8 +219,8 @@ public class SearchListActivity extends Activity {
 							getApplicationContext(), resultList,
 							R.layout.list_item, new String[] { "info_name","address", "phone_no" },
 							new int[] { R.id.info_name, R.id.address,R.id.phone_no });
-					// updating listview					 
-					
+					// updating listview
+					 				
 					lv.setAdapter(adapter);
 				}
 			});
@@ -251,7 +247,7 @@ public class SearchListActivity extends Activity {
 
 		// new registerJSONdbTask().execute(url_register);
 		input_services = String.valueOf(spServices.getSelectedItem());
-
+		
 		input_range = hMap.get("range");
 		input_rating = hMap.get("rating");
 		input_cuisine = hMap.get("cuisine");

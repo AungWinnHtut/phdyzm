@@ -26,6 +26,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -50,7 +51,7 @@ public class AdminActivity extends Activity {
 	EditText etCui;
 
 	String input_catalog = "";
-	String input_name= "";
+	String input_name = "";
 	String input_address = "";
 	String input_phone = "";
 	String input_url = "";
@@ -65,31 +66,40 @@ public class AdminActivity extends Activity {
 	JSONParser jsonParser = new JSONParser();
 
 	// change here your ip/folder/php
-	//private static String url_add="http://mmgreenhacker.com/esdb/add_hotel.php";
-	//private static String url_add_hospital = "http://mmgreenhacker.com/esdb/add_hospital.php";
-	//private static String url_add_hotel = "http://mmgreenhacker.com/esdb/add_hotel.php";
-	//private static String url_add_bank= "http://mmgreenhacker.com/esdb/add_bank.php";
-	//private static String url_add_restaurant= "http://mmgreenhacker.com/esdb/add_restaurant.php";
-	private static String url_add="http://mmgreenhackers.com/esdb/add_hotel.php";
+	// private static String
+	// url_add="http://mmgreenhacker.com/esdb/add_hotel.php";
+	// private static String url_add_hospital =
+	// "http://mmgreenhacker.com/esdb/add_hospital.php";
+	// private static String url_add_hotel =
+	// "http://mmgreenhacker.com/esdb/add_hotel.php";
+	// private static String url_add_bank=
+	// "http://mmgreenhacker.com/esdb/add_bank.php";
+	// private static String url_add_restaurant=
+	// "http://mmgreenhacker.com/esdb/add_restaurant.php";
+	private static String url_add = "http://mmgreenhackers.com/esdb/add_hotel.php";
 	private static String url_add_hospital = "http://mmgreenhackers.com/esdb/add_hospital.php";
 	private static String url_add_hotel = "http://mmgreenhackers.com/esdb/add_hotel.php";
-	private static String url_add_bank= "http://mmgreenhackers.com/esdb/add_bank.php";
-	private static String url_add_restaurant= "http://mmgreenhackers.com/esdb/add_restaurant.php";
-	
-	
-	
+	private static String url_add_bank = "http://mmgreenhackers.com/esdb/add_bank.php";
+	private static String url_add_restaurant = "http://mmgreenhackers.com/esdb/add_restaurant.php";
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_admin);
-		spCatalog = (Spinner)findViewById(R.id.spCatalog);
+
+		spCatalog = (Spinner) findViewById(R.id.spCatalog);
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+				this, R.array.services_arrays, R.layout.spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spCatalog.setAdapter(adapter);
+
 		etName = (EditText) findViewById(R.id.etName);
 		etAddress = (EditText) findViewById(R.id.etAddress);
-		etPhone= (EditText) findViewById(R.id.etPhone);
+		etPhone = (EditText) findViewById(R.id.etPhone);
 		etUrl = (EditText) findViewById(R.id.etUrl);
 		etRating = (EditText) findViewById(R.id.etRating);
 		etLat = (EditText) findViewById(R.id.etLat);
-		etLng= (EditText) findViewById(R.id.etLng);
+		etLng = (EditText) findViewById(R.id.etLng);
 		etP1 = (EditText) findViewById(R.id.etP1);
 		etP2 = (EditText) findViewById(R.id.etP2);
 		etCui = (EditText) findViewById(R.id.etCui);
@@ -105,44 +115,51 @@ public class AdminActivity extends Activity {
 			InputStream is = null;
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
 
-			
-			input_catalog=String.valueOf(spCatalog.getSelectedItemPosition());			
-			input_name=etName .getText().toString();
-			input_address=etAddress .getText().toString();
-			input_phone=etPhone.getText().toString();
-			input_url=etUrl .getText().toString();
-			input_rating=etRating.getText().toString();
-			input_lat=etLat .getText().toString();
-			input_lng=etLng.getText().toString();
-			input_p1=etP1 .getText().toString();
-			input_p2=etP2 .getText().toString();
-			input_cui=etCui .getText().toString();
-					
-			if (input_catalog.equals("") || input_name.equals("")) {				
+			input_catalog = String.valueOf(spCatalog.getSelectedItemPosition());
+			input_name = etName.getText().toString();
+			input_address = etAddress.getText().toString();
+			input_phone = etPhone.getText().toString();
+			input_url = etUrl.getText().toString();
+			input_rating = etRating.getText().toString();
+			input_lat = etLat.getText().toString();
+			input_lng = etLng.getText().toString();
+			input_p1 = etP1.getText().toString();
+			input_p2 = etP2.getText().toString();
+			input_cui = etCui.getText().toString();
+
+			if (input_catalog.equals("") || input_name.equals("")) {
 				return null;
 			} else {
 				params.add(new BasicNameValuePair("catalog", input_catalog));
 				params.add(new BasicNameValuePair("name", input_name));
-				params.add(new BasicNameValuePair("address",input_address));
+				params.add(new BasicNameValuePair("address", input_address));
 				params.add(new BasicNameValuePair("phone_no", input_phone));
 				params.add(new BasicNameValuePair("url", input_url));
-				params.add(new BasicNameValuePair("rating",input_rating));
+				params.add(new BasicNameValuePair("rating", input_rating));
 				params.add(new BasicNameValuePair("lat", input_lat));
 				params.add(new BasicNameValuePair("lng", input_lng));
 				params.add(new BasicNameValuePair("pl", input_p1));
-				params.add(new BasicNameValuePair("ph",input_p2));
+				params.add(new BasicNameValuePair("ph", input_p2));
 				params.add(new BasicNameValuePair("cu", input_cui));
 
 				// getting JSON Object
 				try {
 					DefaultHttpClient httpClient = new DefaultHttpClient();
-					switch(spCatalog.getSelectedItemPosition())
-					{
-					case 0:	url_add=url_add_hotel; break;
-					case 1: url_add=url_add_bank; break;
-					case 2: url_add=url_add_restaurant; break;
-					case 3: url_add=url_add_hospital; break;
-						default: Log.e("error catalog","no such index");
+					switch (spCatalog.getSelectedItemPosition()) {
+					case 0:
+						url_add = url_add_hotel;
+						break;
+					case 1:
+						url_add = url_add_bank;
+						break;
+					case 2:
+						url_add = url_add_restaurant;
+						break;
+					case 3:
+						url_add = url_add_hospital;
+						break;
+					default:
+						Log.e("error catalog", "no such index");
 					}
 					HttpPost httpPost = new HttpPost(url_add);
 					httpPost.setEntity(new UrlEncodedFormEntity(params));
@@ -197,31 +214,27 @@ public class AdminActivity extends Activity {
 		// onPostExecute displays the results of the AsyncTask.
 		@Override
 		protected void onPostExecute(String result) {
-		
-			try{
-				if(result.equals(null))
-				{
-					Toast.makeText(getBaseContext(), "'"+ result+"'",Toast.LENGTH_LONG).show();
+
+			try {
+				if (result.equals(null)) {
+					//Toast.makeText(getBaseContext(), "'" + result + "'",
+						//	Toast.LENGTH_LONG).show();
+				} else {
+					Toast.makeText(getBaseContext(),
+							"Data successfully send to server!!!",
+							Toast.LENGTH_LONG).show();
 				}
-				else
-				{
-					Toast.makeText(getBaseContext(), "Data successfully send to server!!!",Toast.LENGTH_LONG).show();
-				}
-					
-			}catch(Exception e)
-			{
-				Log.e("JSON",e.toString());
-				Toast.makeText(getBaseContext(), "Data cannot be send! Please fill the required fields !!!",Toast.LENGTH_LONG).show();
+
+			} catch (Exception e) {
+				Log.e("JSON", e.toString());
+				Toast.makeText(
+						getBaseContext(),
+						"Data cannot be send! Please fill the required fields !!!",
+						Toast.LENGTH_LONG).show();
 			}
-			
-			
-			
-			
-			
+
 		}
 	}
-
-
 
 	private static String convertInputStreamToString(InputStream inputStream)
 			throws IOException {
@@ -240,10 +253,10 @@ public class AdminActivity extends Activity {
 	public void funAdd(View v) {
 		// new registerJSONdbTask().execute(url_register);
 		new HttpAsyncTask().execute(url_add);
-		//funClearAll();
+		// funClearAll();
 	}
-	public void funClearAll()
-	{
+
+	public void funClearAll() {
 		etName.setText("");
 		etAddress.setText("");
 		etPhone.setText("");
@@ -254,31 +267,34 @@ public class AdminActivity extends Activity {
 		etP1.setText("");
 		etP2.setText("");
 		etCui.setText("");
-		
+
 	}
-	
-	public void funGetLocation()
-	{
+
+	public void funGetLocation() {
 		String lat;
 		String lng;
-		lat=getLocation("lat","22.024104");
-		lng=getLocation("lng","96.447339");
-		Toast.makeText(getApplicationContext(),"Your current Location is "+lat+" , " +lng, Toast.LENGTH_LONG).show();
+		lat = getLocation("lat", "22.024104");
+		lng = getLocation("lng", "96.447339");
+		//Toast.makeText(getApplicationContext(),
+		//		"Your current Location is " + lat + " , " + lng,
+		//		Toast.LENGTH_LONG).show();
 		etLat.setText(lat);
 		etLng.setText(lng);
 	}
-	public String getLocation(String key, String default_value){
-		SharedPreferences sharedPref = this.getSharedPreferences("com.engineer4myanmar.json",Context.MODE_PRIVATE);	
+
+	public String getLocation(String key, String default_value) {
+		SharedPreferences sharedPref = this.getSharedPreferences(
+				"com.engineer4myanmar.json", Context.MODE_PRIVATE);
 		String val = sharedPref.getString(key, default_value);
 		return val;
 	}
-	public void setLocation(String key,String val)
-	{
-		SharedPreferences sharedPref = this.getSharedPreferences("com.engineer4myanmar.json",Context.MODE_PRIVATE);
+
+	public void setLocation(String key, String val) {
+		SharedPreferences sharedPref = this.getSharedPreferences(
+				"com.engineer4myanmar.json", Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = sharedPref.edit();
-		editor.putString(key,val);	
+		editor.putString(key, val);
 		editor.commit();
 	}
 
-	
 }

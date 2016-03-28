@@ -33,6 +33,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -73,7 +74,6 @@ public class Search2Activity extends Activity implements OnItemSelectedListener 
 	ArrayList<HashMap<String, String>> resultList = new ArrayList<HashMap<String, String>>();
 	String finalResult="";
 
-
 	// /////////////////////////////////////////////////////////////////////
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -83,13 +83,36 @@ public class Search2Activity extends Activity implements OnItemSelectedListener 
 		llPrice = (LinearLayout)findViewById(R.id.llPrice );
 		llMaxMin = (LinearLayout)findViewById(R.id.llMaxMin);
 		llCuisine = (LinearLayout)findViewById(R.id.llCuisine);
+		
 		spServices = (Spinner) findViewById(R.id.spServices);
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+				this, R.array.services_arrays, R.layout.spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spServices.setAdapter(adapter);
+
 		spRange = (Spinner) findViewById(R.id.spRange);
+		ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(
+				this, R.array.range_arrays, R.layout.spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spRange.setAdapter(adapter1);
+		
 		spRating = (Spinner) findViewById(R.id.spRating);
+		ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(
+				this, R.array.ratings_arrays, R.layout.spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spRating.setAdapter(adapter2);
+		
 		etMin = (EditText) findViewById(R.id.etMin);
 		etMax = (EditText) findViewById(R.id.etMax);
+		
 		spCuisine = (Spinner) findViewById(R.id.spCuisine);
+		ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(
+				this, R.array.cuisine_arrays, R.layout.spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spCuisine.setAdapter(adapter3);
+		
 		spServices.setOnItemSelectedListener(this);
+		
 	}
 
 
@@ -97,8 +120,7 @@ public class Search2Activity extends Activity implements OnItemSelectedListener 
 		HashMap<String,String> hashMap = new HashMap<String,String>();
 		// new registerJSONdbTask().execute(url_register);
 		input_services = String.valueOf(spServices.getSelectedItem());
-		// Toast.makeText(getApplicationContext(), input_services,
-		// Toast.LENGTH_SHORT).toString();
+		
 		// TO DO hospital and bank data omit
 		input_range = String.valueOf(spRange.getSelectedItem());
 		input_rating = String.valueOf(spRating.getSelectedItem());
@@ -112,50 +134,88 @@ public class Search2Activity extends Activity implements OnItemSelectedListener 
 		hashMap.put("cuisine",input_cuisine);
 		hashMap.put("min",input_min);
 		hashMap.put("max",input_max);
-		/////////////////////////////////////////
-		SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);		
-		String lat = sharedPref.getString("lat", "22.024104");
-		String lng = sharedPref.getString("lng","96.447339");
+		/////////////////////////////////////////	
+		
+		String lat;
+		String lng;
+		lat = getLocation("lat", "22.024104");
+		lng = getLocation("lng", "96.447339");
+	
 		hashMap.put("x0",lat);
 		hashMap.put("y0",lng);
 		hashMap.put("r",input_range);
 		
 		
-		Toast.makeText(getApplicationContext(), hashMap.get("range"),
-				Toast.LENGTH_SHORT).show();
+		
 		Intent intent = new Intent(getApplicationContext(),
 				SearchListActivity.class);			
 		intent.putExtra("hashMap",hashMap);		
 		startActivity(intent);
 	}
+	public void funSearchPDA(View v) {
+		HashMap<String,String> hashMap = new HashMap<String,String>();
+		// new registerJSONdbTask().execute(url_register);
+		input_services = String.valueOf(spServices.getSelectedItem());
+	
+		// TO DO hospital and bank data omit
+		input_range = String.valueOf(spRange.getSelectedItem());
+		input_rating = String.valueOf(spRating.getSelectedItem());
+		input_cuisine = String.valueOf(spCuisine.getSelectedItem());
+		input_min = etMin.getText().toString();
+		input_max = etMax.getText().toString();
+		//Bundle with hashMap
+		hashMap.put("name",input_services);
+		hashMap.put("range",input_range);
+		hashMap.put("rating",input_rating);
+		hashMap.put("cuisine",input_cuisine);
+		hashMap.put("min",input_min);
+		hashMap.put("max",input_max);
+		/////////////////////////////////////////	
+		
+		String lat;
+		String lng;
+		lat = getLocation("lat", "22.024104");
+		lng = getLocation("lng", "96.447339");
+	
+		hashMap.put("x0",lat);
+		hashMap.put("y0",lng);
+		hashMap.put("r",input_range);
+		
+		
+	
+		Intent intent = new Intent(getApplicationContext(),
+				SearchList2Activity.class);			
+		intent.putExtra("hashMap",hashMap);		
+		startActivity(intent);
+	}
+	public String getLocation(String key, String default_value) {
+		SharedPreferences sharedPref = this.getSharedPreferences(
+				"com.engineer4myanmar.json", Context.MODE_PRIVATE);
+		String val = sharedPref.getString(key, default_value);
+		return val;
+	}
 
 	public void onItemSelected(AdapterView<?> parent, View view, int pos,
-			long id) {
-		// TODO Auto-generated method stub
+			long id) {		
 		switch(pos)
 		{
 		case 0:
-			showViews();
-			//Toast.makeText(getApplicationContext(), "zero",Toast.LENGTH_SHORT).show();
+			showViews();			
 			break;
 		case 1:
-			hideViews();
-			//Toast.makeText(getApplicationContext(), "one",Toast.LENGTH_SHORT).show();
+			hideViews();		
 			break;
 		case 2:
-			showViews();
-			//Toast.makeText(getApplicationContext(), "two",Toast.LENGTH_SHORT).show();			
+			showViews();				
 			break;
 		case 3:
-			hideViews();
-			//Toast.makeText(getApplicationContext(), "three",Toast.LENGTH_SHORT).show();
+			hideViews();			
 			break;
 		}
 		
 	}
 
-	public void onNothingSelected(AdapterView<?> arg0) {
-		// TODO Auto-generated method stub
+	public void onNothingSelected(AdapterView<?> arg0) {	
 		
 	}
 
@@ -215,121 +275,8 @@ public class Search2Activity extends Activity implements OnItemSelectedListener 
 		}
 		return stringBuilder.toString();
 
-	}
+	}	
 	
-	
-/*
-	private class HttpAsyncTaskSearch extends AsyncTask<String, String, String>{
-		public AsyncResponse delegate=null;
-		JSONObject json = null;
-		List<NameValuePair> params1 = new ArrayList<NameValuePair>();
 
-		@Override
-		protected void onPreExecute() {
-
-		}
-
-		@Override
-		protected String doInBackground(String... urls) {
-
-			// Building Parameters
-			params1.add(new BasicNameValuePair("catalog", input_services));
-			params1.add(new BasicNameValuePair("rating", input_rating));
-			params1.add(new BasicNameValuePair("p1", input_min));
-			params1.add(new BasicNameValuePair("p2", input_max));
-			params1.add(new BasicNameValuePair("cuisine", input_cuisine));
-			//params1.add(new BasicNameValuePair("x0","22.44"));
-			//params1.add(new BasicNameValuePair("y0","96.44"));
-			//params1.add(new BasicNameValuePair("r", "3"));
-			// TO DO * need to add range, cur_lat and cur_lng
-			
-			if (!resultList.isEmpty()) {
-				resultList.clear();
-			}
-			return readJSONFeed(urls[0], params1);
-		}
-		*/
-
-		/**
-		 * After completing background task Dismiss the progress dialog
-		 * @return 
-		 * @return 
-		 * **/
-	/*
-		protected  void onPostExecute(String result) {
-			
-			if(!finalResult.isEmpty())
-			{
-				//finalResult="";
-			}
-			finalResult.concat(result);
-			
-			
-			JSONArray resultJsonArray = null;
-			try {
-				JSONObject json = new JSONObject(result);
-				int success = json.getInt("success");
-				if (success == 1) {
-					resultJsonArray = json.getJSONArray("result");
-
-					for (int i = 0; i < resultJsonArray.length(); i++) {
-						JSONObject c = resultJsonArray.getJSONObject(i);
-						String info_name = c.getString("info_name");
-						String address = c.getString("address");
-						String phone_no = c.getString("phone_no");
-
-						// creating new HashMap
-						HashMap<String, String> map = new HashMap<String, String>();
-						// adding each child node to HashMap key => value
-
-						map.put("info_name", info_name);
-						map.put("address", address);
-						map.put("phone_no", phone_no);
-						try {
-							resultList.add(map);
-							Log.d("arl error", resultList.toString());
-						} catch (Exception e) {
-							Log.e("arl error", e.toString());
-
-						}
-
-						// ### user-pass testing purpose
-						// Toast.makeText(
-						// getBaseContext(),
-						// info_name+ " -" + address
-						// + "-" + phone_no, Toast.LENGTH_SHORT)
-						// .show();
-						// ### user-pass testing end
-					}
-
-				} else {
-					//Toast.makeText(getBaseContext(), "fail", Toast.LENGTH_SHORT)
-					//		.show();
-					// ### user-pass testing end
-				}
-
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			//return result;
-		}
-		
-	}
-
-	@SuppressWarnings("unused")
-	private String convertInputStreamToString(InputStream inputStream)
-			throws IOException {
-		BufferedReader bufferedReader = new BufferedReader(
-				new InputStreamReader(inputStream));
-		String line = "";
-		String result = "";
-		while ((line = bufferedReader.readLine()) != null)
-			result += line;
-
-		inputStream.close();
-		return result;
-	}
-	*/
 
 }

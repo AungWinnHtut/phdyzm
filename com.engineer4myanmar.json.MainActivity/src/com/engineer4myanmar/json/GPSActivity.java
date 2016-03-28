@@ -78,41 +78,7 @@ public class GPSActivity extends Activity implements LocationListener {
 		Toast.makeText(this, "Disabled provider " + provider,
 				Toast.LENGTH_SHORT).show();
 	}
-
-	/*
-	public void funGetLoc(View v) {
-		String value;
-		Geocoder geocoder;
-		String bestProvider;
-		double lat;
-		double lng;
-		Context context = null;
-		LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-		Criteria criteria = new Criteria();
-		bestProvider = lm.getBestProvider(criteria, false);
-		Location location = lm.getLastKnownLocation(bestProvider);
-		if (location == null) {
-			value = "0,0";
-		} else {
-			geocoder = new Geocoder(context);
-			try {
-				List<Address> user = geocoder.getFromLocation(
-						location.getLatitude(), location.getLongitude(), 1);
-				lat = (double) user.get(0).getLatitude();
-				lng = (double) user.get(0).getLongitude();
-				TextView etlat = (TextView) findViewById(R.id.TextView02);
-				TextView etlng = (TextView) findViewById(R.id.TextView04);
-				etlat.setText(String.valueOf(lat));
-				etlng.setText(String.valueOf(lng));
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-		}
-
-	}
-*/
+	
 	public void funRefresh() {
 		latituteField = (TextView) findViewById(R.id.TextView02);
 		longitudeField = (TextView) findViewById(R.id.TextView04);
@@ -179,6 +145,11 @@ public class GPSActivity extends Activity implements LocationListener {
 		SharedPreferences.Editor editor = sharedPref.edit();
 		editor.putString(key,val);	
 		editor.commit();
+	}
+	public void funHome(View v)
+	{
+		this.finish();
+
 	}
 	
 	

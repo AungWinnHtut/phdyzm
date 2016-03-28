@@ -163,7 +163,7 @@ public class MainActivity extends Activity {
 			// ipaddress = etIpaddress.getText().toString();
 			inputUsername = etUsername.getText().toString();
 			inputPassword = etPassword.getText().toString();
-			Toast.makeText(getApplicationContext(), inputUsername, Toast.LENGTH_SHORT).show();
+			//Toast.makeText(getApplicationContext(), inputUsername, Toast.LENGTH_SHORT).show();
 			user_status = 0;
 			password_status = 0;
 			login_status = 0;
@@ -188,13 +188,6 @@ public class MainActivity extends Activity {
 							password_status = 1;
 						}
 
-						// ### user-pass testing purpose
-						// Toast.makeText(
-						// getBaseContext(),
-						// String.valueOf(user_id) + " -" + user_name
-						// + "-" + user_password,
-						// Toast.LENGTH_SHORT).show();
-						// //### user-pass testing end
 					}
 
 					if (user_status == 1 && password_status == 1) {
@@ -237,24 +230,5 @@ public class MainActivity extends Activity {
 
 	}
 
-	// TO DO .. remove
-	/*
-	 * public void funGetLoc(View v) { String lat; String lng; lat =
-	 * getLocation("lat", "22.024104"); lng = getLocation("lng", "96.447339");
-	 * Toast.makeText(getApplicationContext(), "Your current Location is " + lat
-	 * + " , " + lng, Toast.LENGTH_LONG).show(); }
-	 * 
-	 * public String getLocation(String key, String default_value) {
-	 * SharedPreferences sharedPref = this.getSharedPreferences(
-	 * "com.engineer4myanmar.json", Context.MODE_PRIVATE); String val =
-	 * sharedPref.getString(key, default_value); return val; }
-	 * 
-	 * public void setLocation(String key, String val) { SharedPreferences
-	 * sharedPref = this.getSharedPreferences( "com.engineer4myanmar.json",
-	 * Context.MODE_PRIVATE); SharedPreferences.Editor editor =
-	 * sharedPref.edit(); editor.putString(key, val); editor.commit(); }
-	 * 
-	 * public void funViewMap(View v) { Intent intent = new Intent(this,
-	 * MapActivity.class); startActivity(intent); } // /// TO DO till here
-	 */
+	
 }

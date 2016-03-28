@@ -31,8 +31,6 @@ Customers can click the search buttom and use the available services.</string>
         <item>1</item>
         <item>2</item>
         <item>3</item>
-        <item>4</item>
-        <item>5</item>
     </string-array>
     <string-array name="cuisine_arrays">
         <item>Chinese</item>
@@ -46,15 +44,21 @@ Customers can click the search buttom and use the available services.</string>
         <item>3</item>
         <item>4</item>
         <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
     </string-array>
 
     <string name="title_activity_admin">AdminActivity</string>
     <string name="title_activity_search_list">SearchListActivity</string>
-    <string name="title_activity_search2">Search2Activity</string>
+    <string name="title_activity_search2">Search Your Services</string>
     <string name="title_activity_detail">DetailActivity</string>
-    <string name="title_activity_gps">GPSActivity</string>
+    <string name="title_activity_gps">GPS data ...</string>
     <string name="title_activity_map">MapActivity</string>
     <string name="title_activity_gmap">GMapActivity</string>
     <string name="title_activity_map2">Map2Activity</string>
+    <string name="title_activity_search_list2">SearchList2Activity</string>
 
 </resources>
